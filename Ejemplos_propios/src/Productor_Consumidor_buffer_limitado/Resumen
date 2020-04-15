@@ -1,0 +1,10 @@
+15/04/2020
+
+# Objetivo:
+  - Comprender la forma de trabajo y altercado entre un productor que ingresa una cantidad finita al buffer
+  mientras que un consumidor obtiene una cantidad finita del buffer.
+  Esto esta regulado por una cantidad máxima del bufffer.
+  - Buffer: es mi variable crítica a quien debo proteger
+  
+# Concluciones
+  - Cuando uno de los dos toma el buffer no lo suelta hasta que haya o llenado o vaciado. (Intentar que esto no ocurra)
