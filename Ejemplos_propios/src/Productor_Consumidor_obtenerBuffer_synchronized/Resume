@@ -1,0 +1,25 @@
+15/04/2020
+
+# sin synchronized
+	- objetos creados:
+		-Buffer x1
+		-Consumidor x1
+		-Productor x1
+		
+	- Observacion:
+		- Hay un continuo altercado entre productor y consumidor. Mientras uno tiene el buffer, 
+		el otro no.
+		lo de sincronizmo no llega a apreciarse.
+		
+# con synchronized
+	- objetos creados:
+		-Buffer x1
+		-Consumidor x2
+		-Productor x1
+		
+	- Observacion:
+		# con notify()
+			- uno de los dos consumidores queda esperando indefinidamente mientras el altercado 
+			se prodiuce entre el productor y el otro consumidor.
+		# con notifyAll()
+			- son los tres que entran en el altercado.
