@@ -1,0 +1,28 @@
+15/04/2020
+
+# Objetivo
+	- Comprender el comportamiento de los semaforos.
+
+# Observaciones
+		- En su primera vista, los diez hilos creados estan yendo a imprimir. 
+	El flitro aqui lo impone el semaforo.
+	EL valor que se le pasa al semaforo como parametro, indica la cantidad de copias de un 
+	de un recurso que será compartido.
+	En este caso, impresoras.
+		-
+	thread0: Yendo a imprimir un trabajo
+	thread9: Yendo a imprimir un trabajo
+	thread9: imprimiendo un trabajo durante 2 segundos
+	thread8: Yendo a imprimir un trabajo
+	thread7: Yendo a imprimir un trabajo
+	thread7: imprimiendo un trabajo durante 2 segundos
+	thread6: Yendo a imprimir un trabajo
+	
+		El fragmento anterior representa una salida en pantalla al modificar el parametro del 
+	semaforo al valor de tres (3).
+		El hilo 0 al igual que le hilo 9 van a imprimir pero el hilo 9 toma una impresora.
+	En eso el 8 y el 7 tambien estan yendo a imprimir con lo cual solo el 7 toma una impresora.
+	Aqui es evidente que aun el hilo 9 estando en proceso de impresion, el 7 tambien esta en el
+	mismo proceso.
+	
+		Al modificar el parametro, fisicamente estamos diciendo con cuántos recursos contamos.	

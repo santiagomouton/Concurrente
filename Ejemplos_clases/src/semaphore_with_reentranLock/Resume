@@ -1,0 +1,40 @@
+16/04/2020
+
+# Objetivos
+	- Uso de Lock : ReenTrantLock()
+	- uso de Semaforo
+	
+		Se crean diez hilo que quieren imprimir. Se cuenta con tres impresoras.
+		Se busca entender los distintos filtros (dicho en terminos faciles) que se disponen para administrar
+	los recursos que serán compartidos.
+		Se entiende que al usar Semaforo estamos precisando la cantidad de trabajos que se podrán realizar. En otras 
+	palabras, se sabe cuantos pueden ingresar pero no cuantos pueden tener acceso a las impresoras.
+	
+	Ej: vamos diez a un cetro de impresiones y que en la puerta el guardia (Semaforo) solo deje pasar tres de nsotros
+		 y a los otros 7 los deje espereando afuera. Si bien logramos entrar, aun no hemos impreso nada.
+		Nos atiende el que trabaja en el centro de imrpesiones (Lock) pero solo toman uno solo de los trabajos porque 
+		cuenta con solo una impresora, los otros dos, esperamos.
+		
+	De esta manera funciona el codigo.
+	
+	
+	
+		IMPRESORAS					   LOCK (3)								       SEMAFORO(3)
+					|			Lock	*   esperando		|			Semaforo	"	esperando	 |    ingreso
+		lib_3 ocu_0	|										|										 |		10
+					|										|				3		*     7			 |	
+--------------------------------------------------------------------------------------------------------------.						
+		lib_3 ocu_0	|			 1		*		2			|				3		*	  7			 |			
+--------------------------------------------------------------------------------------------------------------.
+		lib_2 ocu_1	|			 1		*		1			|				3		*	  7			 |	
+--------------------------------------------------------------------------------------------------------------.
+		lib_1 ocu_2	|			 1		*		0			|				3		*	  7			 |	
+--------------------------------------------------------------------------------------------------------------.
+		lib_0 ocu_3	|			 0		*		0			|				3		*	  7			 |	
+		
+		Para la libreacion de las impresoras, se libera el token del semaforo para que otro hilo vaya a buscar la impresora
+	libre.
+		
+# Observaciones
+		Si bien con semaforo nos aseguramos que solo entren la misma cantidad de hilos que los recursos disponibles, 
+	el uso del Lock nos permite tomar los recursos en orden y que no haya 
