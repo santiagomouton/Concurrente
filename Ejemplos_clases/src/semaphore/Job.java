@@ -12,13 +12,13 @@ public class Job implements Runnable {
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
+		// imprimimos nombre del hilo
 		System.out.printf("%s: Yendo a imprimir un trabajo", 
 				Thread.currentThread().getName());
 		System.out.println();
-		
+		//  accion de imprimir
 		printQueue.printJob(new Object());
-		
+		// tarea finalizada
 		System.out.println();
 		System.out.printf("%s: EL documento ha sido impreso", 
 				Thread.currentThread().getName());

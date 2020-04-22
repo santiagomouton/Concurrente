@@ -1,0 +1,30 @@
+21/04/2020
+
+# objetivo
+
+	- Comprender el uso de CountDownLatch
+
+# Procedimiento
+	
+	- Realizamos una conferencia para diez participantes. La conferencia inicia cuando los diez participantes hayan llegado.
+	
+# Observacion
+	
+	- Se usaron dos metodos:
+		. await()  		:  Sirve para dormir un objeto hasta que el contador de CountDownLatch llegue a cero.
+		. countDown()	:  Sirve para decrementar en uno el contador de CountDownLatch
+		Notar que estos metodos se los maneja en la clase que necesita un conjunto de procesos para hacer algo.	En este caso,
+	la clase conferencia los usa para conocer que ha llegado un participante y para esperar que todos lleguen.
+	
+	De alguna manera se lo  puede imaginar como una accion JOIN..
+	
+							   	  		  / participante 0
+							  	 		 /
+									| <-/
+									|
+		inicio conferencia <--------|<------  paticiapnte 1
+									|...
+									|...
+									|<-\
+							  			\
+							   	 		 \ particiapnte 9

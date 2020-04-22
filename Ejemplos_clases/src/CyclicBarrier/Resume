@@ -1,0 +1,17 @@
+
+21/04/2020
+
+# Objetivo
+
+	-Comprender el comportamiento de CyclicBarrier
+	
+# Procedimiento
+
+# Observacion
+	
+	_ Su funcion es parecida a CoutDownLatch, con la diferencia que necesitamos decirle la accion que sigue luego de la sincrinizacion.
+	Es parecida en terminos de
+		- decrementar el conatador hasta producir el JOIN
+		- Producido el JOIN, Se despiertas todos los hilos y se continua.
+	IMPORTANTE:
+		_ EL hilo que realizo el ultimo await() será el encargado de ejecutar la accion siguiente del JOIN. 
